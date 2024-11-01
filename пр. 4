@@ -1,0 +1,25 @@
+# Функція для видалення дублікатів зі списку
+def remove_duplicates(lst):
+    unique_elements = list(set(lst))  # Видаляємо дублікати, конвертуємо в список
+    return unique_elements
+
+# Функція для сортування списку за заданими умовами
+def custom_sort(lst):
+    # Розділяємо елементи за типом
+    numbers = sorted([x for x in lst if isinstance(x, (int, float))])  # Сортуємо числа
+    strings = sorted([x for x in lst if isinstance(x, str)])           # Сортуємо рядки
+    
+    # Об'єднуємо числа і рядки в один список
+    sorted_list = numbers + strings
+    return sorted_list
+
+# Початковий список
+initial_list = [1, 2, 3, 4, 5, 6, 3, 4, 5, 7, 6, 5, 4, 3, 4, 5, 4, 3, 'Привіт', 'анаконда']
+
+# Видаляємо дублікати
+unique_list = remove_duplicates(initial_list)
+print("Список без повторень:", unique_list)
+
+# Сортуємо список за умовами
+sorted_list = custom_sort(unique_list)
+print("Відсортований список:", sorted_list)
